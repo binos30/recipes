@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes/models/recipe.dart';
+import 'package:recipes/screens/recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const Text('Detail');
+                      return RecipeDetail(recipe: Recipe.samples[index]);
                     },
                   ),
                 );
