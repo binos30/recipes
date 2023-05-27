@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipes/models/recipe.dart';
+import '../models/recipe.dart';
 
 class RecipeDetail extends StatefulWidget {
   final Recipe recipe;
@@ -41,9 +41,11 @@ class _RecipeDetailState extends State<RecipeDetail> {
                 itemCount: widget.recipe.ingredients.length,
                 itemBuilder: (BuildContext context, int index) {
                   final ingredient = widget.recipe.ingredients[index];
+                  final quantity = ingredient.quantity * _sliderVal;
+                  final ingredientName =
+                      '${ingredient.measure} ${ingredient.name}';
 
-                  return Text(
-                      '${ingredient.quantity * _sliderVal} ${ingredient.measure} ${ingredient.name}');
+                  return Text('$quantity $ingredientName');
                 },
               ),
             ),

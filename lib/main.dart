@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipes/models/recipe.dart';
-import 'package:recipes/screens/recipe_detail.dart';
+import 'models/recipe.dart';
+import 'screens/recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -11,10 +11,11 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = ThemeData();
+    final theme = ThemeData();
 
     return MaterialApp(
       title: 'Recipe Calculator',
+      debugShowCheckedModeBanner: false,
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
           primary: Colors.grey,
