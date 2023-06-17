@@ -17,7 +17,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recipe Calculator'),
+        title: Text(
+          'Recipe Calculator',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ),
       body: SafeArea(
         child: ListView.builder(
@@ -52,14 +55,7 @@ class _HomeState extends State<Home> {
           children: [
             Image(image: AssetImage(recipe.imageUrl)),
             const SizedBox(height: 14.0),
-            Text(
-              recipe.label,
-              style: const TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Palatino',
-              ),
-            ),
+            Text(recipe.label, style: Theme.of(context).textTheme.titleLarge),
           ],
         ),
       ),
