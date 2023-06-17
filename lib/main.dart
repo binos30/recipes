@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'app_theme.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -10,17 +11,12 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = ThemeData();
+    final theme = AppTheme.dark();
 
     return MaterialApp(
       title: 'Recipe Calculator',
       debugShowCheckedModeBanner: false,
-      theme: theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.grey,
-          secondary: Colors.black,
-        ),
-      ),
+      theme: theme,
       home: const Home(),
     );
   }

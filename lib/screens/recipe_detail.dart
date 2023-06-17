@@ -19,7 +19,9 @@ class _RecipeDetailState extends State<RecipeDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.recipe.label)),
+      appBar: AppBar(
+          title: Text(widget.recipe.label,
+              style: Theme.of(context).textTheme.titleLarge)),
       body: SafeArea(
         child: Column(
           children: [
@@ -31,10 +33,8 @@ class _RecipeDetailState extends State<RecipeDetail> {
               ),
             ),
             const SizedBox(height: 4.0),
-            Text(
-              widget.recipe.label,
-              style: const TextStyle(fontSize: 18.0),
-            ),
+            Text(widget.recipe.label,
+                style: Theme.of(context).textTheme.titleMedium),
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(7.0),
